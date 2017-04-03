@@ -1,3 +1,14 @@
+# Configs
+config
+newrelic.js
+
+# Data
+app/data/*
+!app/data/emotes-demo.json
+
+# IDE junk
+.idea
+
 # Logs
 logs
 *.log

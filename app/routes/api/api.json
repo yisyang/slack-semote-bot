@@ -1,0 +1,52 @@
+{
+  "controllerPath": "controllers/api",
+  "routesGroups": [
+    {
+      "controller": "index.js",
+      "prefix": "/",
+      "routes": [
+        {
+          "method": "get",
+          "url": "/",
+          "handler": "index"
+        }
+      ]
+    },
+    {
+      "controller": "hello.js",
+      "prefix": "/hello",
+      "routes": [
+        {
+          "method": "get",
+          "url": "/hello",
+          "handler": "hello"
+        },
+        {
+          "method": "get",
+          "url": "/foo/:bar",
+          "handler": "foo"
+        },
+        {
+          "method": "get",
+          "url": "/foo",
+          "handler": "foo"
+        },
+        {
+          "method": "get",
+          "url": "/test",
+          "handler": "test"
+        },
+        {
+          "method": "post",
+          "url": "/test",
+          "handler": "test"
+        },
+        {
+          "method": "get",
+          "url": "/",
+          "handler": "index"
+        }
+      ]
+    }
+  ]
+}

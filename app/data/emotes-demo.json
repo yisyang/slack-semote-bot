@@ -1,0 +1,20 @@
+{
+  "999": [
+    "{{ user }} sings with a seductive voice: \"I've planted nine-hundred ninety-nine roses for you.\"",
+    "{{ user }} sings with a seductive voice: \"I've planted nine-hundred ninety-nine {{ optional }} for you.\"",
+    "{{ user }} sings sadly: \"Flowers have wilted, people have withered. All past longings have faded with the flowers.\"",
+    "{{ user }} sings sadly: \"Flowers have wilted, people have withered. All past longings have faded with the flowers. {{ optional }}\"",
+    "{{ user }} sings to {{ target }} with a seductive voice: \"I've planted nine-hundred ninety-nine roses for you.\"",
+    "{{ user }} sings to {{ target }} with a seductive voice: \"I've planted nine-hundred ninety-nine {{ optional }} for you.\"",
+    "999 roses"
+  ],
+  "zap": [
+    "{{ user }} calls forth lightning from the sky and zaps someone into ashes.",
+    "{{ user }} calls forth lightning from the sky and speaks proudly: {{ optional }}!",
+    "{{ user }} calls forth lightning from the sky and zaps himself/herself into ashes.",
+    "{{ user }} calls forth lightning from the sky and zaps himself/herself into ashes.",
+    "{{ user }} calls forth lightning from the sky and zaps {{ target }} into ashes.",
+    "{{ user }} calls forth lightning from the sky and zaps {{ target }} into ashes, and then speaks proudly: {{ optional }}!",
+    "zap into ashes"
+  ]
+}
