@@ -10,10 +10,8 @@
     var action, cmd, data, optional, parts, ref, ref1, ref2, target, text;
     data = req.app.get('config').data;
     if (!req.body || !req.body.text) {
-      console.log(req.body);
       return res._cc.fail("Text must be provided.", 400);
     }
-    console.log(req.body);
     if (req.body.token !== req.app.get('config').token) {
       return res._cc.fail("Unauthorized token.", 401);
     }
@@ -52,11 +50,7 @@
         response_type: "in_channel",
         text: text
       }
-    }, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
-        console.log(body);
-      }
-    });
+    }, function(error, response, body) {});
     return res.send('');
   };
 

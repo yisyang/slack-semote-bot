@@ -6,10 +6,8 @@ controller.index = (req, res) ->
   data = req.app.get('config').data
 
   if !req.body || !req.body.text
-    console.log(req.body)
     return res._cc.fail("Text must be provided.", 400)
 
-  console.log(req.body)
   if req.body.token != req.app.get('config').token
     return res._cc.fail("Unauthorized token.", 401)
 
@@ -52,9 +50,7 @@ controller.index = (req, res) ->
       response_type: "in_channel"
       text: text
   }, (error, response, body) ->
-    if (!error && response.statusCode == 200)
-      console.log(body)
-      return
+    return
 
   res.send ''
 
