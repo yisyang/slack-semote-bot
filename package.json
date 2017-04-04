@@ -6,9 +6,8 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./config/config-pm2.json",
-    "start-dev": "node ./bin/app.js",
-    "stop": "pm2 stop ./config/config-pm2.json --watch 0",
-    "server": "node ./bin/server.js"
+    "start-server": "node ./bin/app.js",
+    "stop": "pm2 stop ./config/config-pm2.json --watch 0"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
