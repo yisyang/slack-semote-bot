@@ -21,7 +21,9 @@
     target = (ref = parts[1]) != null ? ref : '';
     optional = parts[2] ? parts.slice(2).join(' ') : '';
     if (!data[cmd]) {
-      return res._cc.fail("Emote \"" + cmd + "\" cannot be found.", 400);
+      return res.json({
+        text: "Emote \"" + cmd + "\" cannot be found."
+      });
     }
     if (target === '') {
       action = 0;

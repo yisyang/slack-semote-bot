@@ -19,7 +19,8 @@ controller.index = (req, res) ->
   optional = if parts[2] then parts.slice(2).join(' ') else ''
 
   if !data[cmd]
-    return res._cc.fail("Emote \"" + cmd + "\" cannot be found.", 400)
+    return res.json
+      text: "Emote \"" + cmd + "\" cannot be found."
 
   if target is ''
     action = 0 # Act on all surroundings with no option
