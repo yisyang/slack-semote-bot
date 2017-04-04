@@ -1,26 +1,11 @@
 {
   "controllerPath": "controllers/api",
+  "subdomain": "semote-bot",
   "routesGroups": [
-    {
-      "controller": "index.js",
-      "prefix": "/",
-      "routes": [
-        {
-          "method": "get",
-          "url": "/",
-          "handler": "index"
-        }
-      ]
-    },
     {
       "controller": "cemote.js",
       "prefix": "/cemote",
       "routes": [
-        {
-          "method": "post",
-          "url": "/",
-          "handler": "index"
-        },
         {
           "method": "post",
           "url": "/help",
@@ -35,38 +20,18 @@
           "method": "post",
           "url": "/search",
           "handler": "search"
+        },
+        {
+          "method": "post",
+          "url": "/",
+          "handler": "index"
         }
       ]
     },
     {
-      "controller": "hello.js",
-      "prefix": "/hello",
+      "controller": "index.js",
+      "prefix": "/",
       "routes": [
-        {
-          "method": "get",
-          "url": "/hello",
-          "handler": "hello"
-        },
-        {
-          "method": "get",
-          "url": "/foo/:bar",
-          "handler": "foo"
-        },
-        {
-          "method": "get",
-          "url": "/foo",
-          "handler": "foo"
-        },
-        {
-          "method": "get",
-          "url": "/test",
-          "handler": "test"
-        },
-        {
-          "method": "post",
-          "url": "/test",
-          "handler": "test"
-        },
         {
           "method": "get",
           "url": "/",
