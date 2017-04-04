@@ -1,3 +1,5 @@
+request = require('request')
+
 controller = {}
 
 controller.index = (req, res) ->
@@ -6,6 +8,10 @@ controller.index = (req, res) ->
   if !req.body || !req.body.text
     console.log(req.body)
     return res._cc.fail("Text must be provided.", 400)
+
+  console.log(req.body)
+  if req.body.token != req.app.get('config').token
+    return res._cc.fail("Unauthorized token.", 401)
 
   text = req.body.text
   parts = text.split(' ')
@@ -38,12 +44,19 @@ controller.index = (req, res) ->
   text = data[cmd][action].replace(new RegExp('{{ user }}', 'g'), '<@' + (req.body.user_id ? '') + '|' + (req.body.user_name ? '') + '>')
   # Next replace target user name
   text = text.replace(new RegExp('{{ target }}', 'g'), target)
-  # Last replace optional
+  # Last replace optional¨
   text = text.replace(new RegExp('{{ optional }}', 'g'), optional)
 
-  res.json
-    response_type: "in_channel"
-    text: text
+  request.post req.body.response_url, {
+    json:
+      response_type: "in_channel"
+      text: text
+  }, (error, response, body) ->
+    if (!error && response.statusCode == 200)
+      console.log(body)
+      return
+
+  res.send ''
 
 controller.help = (req, res) ->
   res.json
