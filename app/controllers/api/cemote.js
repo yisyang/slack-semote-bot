@@ -38,37 +38,32 @@
       optional = parts.slice(1).join(' ');
       action = 1;
     }
-    text = data[cmd][action].replace('{{ user }}', '<@' + ((ref1 = req.body.user_id) != null ? ref1 : '') + '|' + ((ref2 = req.body.user_name) != null ? ref2 : '') + '>').replace('{{ target }}', target).replace('{{ optional }}', optional);
-    return res.json([
-      {
-        text: text
-      }
-    ]);
+    text = data[cmd][action].replace(new RegExp('{{ user }}', 'g'), '<@' + ((ref1 = req.body.user_id) != null ? ref1 : '') + '|' + ((ref2 = req.body.user_name) != null ? ref2 : '') + '>');
+    text = text.replace(new RegExp('{{ target }}', 'g'), target);
+    text = text.replace(new RegExp('{{ optional }}', 'g'), optional);
+    return res.json({
+      response_type: "in_channel",
+      text: text
+    });
   };
 
   controller.help = function(req, res) {
-    return res.json([
-      {
-        text: "No help right now."
-      }
-    ]);
+    return res.json({
+      text: "No help right now."
+    });
   };
 
   controller.list = function(req, res) {
-    return res.json([
-      {
-        text: "TODO"
-      }
-    ]);
+    return res.json({
+      text: "TODO"
+    });
   };
 
   controller.search = function(req, res) {
-    return res.json([
-      {
-        text: "This will involve ES, so leave for future.",
-        body: req.body
-      }
-    ]);
+    return res.json({
+      text: "This will involve ES, so leave for future.",
+      body: req.body
+    });
   };
 
   module.exports = controller;

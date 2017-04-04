@@ -34,26 +34,28 @@ controller.index = (req, res) ->
     optional = parts.slice(1).join(' ')
     action = 1 # Act on all surroundings with option
 
-  text = data[cmd][action].replace('{{ user }}', '<@' + (req.body.user_id ? '') + '|' + (req.body.user_name ? '') + '>').replace('{{ target }}', target).replace('{{ optional }}', optional)
+  # First replace self user name
+  text = data[cmd][action].replace(new RegExp('{{ user }}', 'g'), '<@' + (req.body.user_id ? '') + '|' + (req.body.user_name ? '') + '>')
+  # Next replace target user name
+  text = text.replace(new RegExp('{{ target }}', 'g'), target)
+  # Last replace optional
+  text = text.replace(new RegExp('{{ optional }}', 'g'), optional)
 
-  res.json [
+  res.json
+    response_type: "in_channel"
     text: text
-  ]
 
 controller.help = (req, res) ->
-  res.json [
+  res.json
     text: "No help right now."
-  ]
 
 controller.list = (req, res) ->
-  res.json [
+  res.json
     text: "TODO"
-  ]
 
 controller.search = (req, res) ->
-  res.json [
+  res.json
     text: "This will involve ES, so leave for future."
     body: req.body
-  ]
 
 module.exports = controller
