@@ -13,6 +13,32 @@
       ]
     },
     {
+      "controller": "cemote.js",
+      "prefix": "/cemote",
+      "routes": [
+        {
+          "method": "post",
+          "url": "/",
+          "handler": "index"
+        },
+        {
+          "method": "post",
+          "url": "/help",
+          "handler": "help"
+        },
+        {
+          "method": "post",
+          "url": "/list",
+          "handler": "list"
+        },
+        {
+          "method": "post",
+          "url": "/search",
+          "handler": "search"
+        }
+      ]
+    },
+    {
       "controller": "hello.js",
       "prefix": "/hello",
       "routes": [

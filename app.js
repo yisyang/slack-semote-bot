@@ -12,6 +12,8 @@
 
   config = require('./config/config.js');
 
+  config.data = require('./app/data/emotes.json');
+
   ErrorHandler = require('./core/handlers/error-handler.js');
 
   CorsHandler = require('./core/handlers/cors-handler.js');

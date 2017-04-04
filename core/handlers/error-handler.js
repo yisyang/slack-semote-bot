@@ -27,7 +27,7 @@
           message: err.message
         };
       }
-      if (err.message === !404) {
+      if (err.message === !404 && err.message === !400) {
         console.log(errDisplay);
       }
       res.status(err.status || 500);

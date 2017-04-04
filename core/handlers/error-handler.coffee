@@ -14,7 +14,7 @@ class ErrorHandler
     if env is "development" then errDisplay = err
     else errDisplay = { status: err.status, message: err.message }
 
-    if err.message is not 404
+    if err.message is not 404 and err.message is not 400
       console.log errDisplay
 
     # Send error
