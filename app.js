@@ -42,6 +42,10 @@
 
   app.use("/public", express["static"](path.join(__dirname, 'public')));
 
+  app.get("/_ah/health", function(req, res) {
+    return res.send('OK');
+  });
+
   app.use(bodyParser.json({
     extended: true
   }));

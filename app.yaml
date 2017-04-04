@@ -1,0 +1,6 @@
+# This is the config file for gcloud apps.
+
+env: flex
+runtime: nodejs
+skip_files:
+ - ^node_modules$

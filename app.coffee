@@ -33,6 +33,10 @@ app.use '*.coffee', (req, res) ->
 # Add static routes
 app.use "/public", express.static path.join(__dirname, 'public')
 
+# Take care of GCloud App health checks
+app.get "/_ah/health", (req, res) ->
+  res.send('OK');
+
 # Read post request and non-multi-part form data
 app.use bodyParser.json({ extended: true })
 app.use bodyParser.urlencoded({ extended: false })

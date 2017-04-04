@@ -37,26 +37,22 @@ controller.index = (req, res) ->
   text = data[cmd][action].replace('{{ user }}', '<@' + (req.body.user_id ? '') + '|' + (req.body.user_name ? '') + '>').replace('{{ target }}', target).replace('{{ optional }}', optional)
 
   res.json [
-    function: "default"
     text: text
   ]
 
 controller.help = (req, res) ->
   res.json [
-    function: "help"
-    message: "No help right now."
+    text: "No help right now."
   ]
 
 controller.list = (req, res) ->
   res.json [
-    function: "list"
-    message: "TODO"
+    text: "TODO"
   ]
 
 controller.search = (req, res) ->
   res.json [
-    function: "search"
-    message: "This will involve ES, so leave for future."
+    text: "This will involve ES, so leave for future."
     body: req.body
   ]
 

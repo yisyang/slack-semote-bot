@@ -41,7 +41,6 @@
     text = data[cmd][action].replace('{{ user }}', '<@' + ((ref1 = req.body.user_id) != null ? ref1 : '') + '|' + ((ref2 = req.body.user_name) != null ? ref2 : '') + '>').replace('{{ target }}', target).replace('{{ optional }}', optional);
     return res.json([
       {
-        "function": "default",
         text: text
       }
     ]);
@@ -50,8 +49,7 @@
   controller.help = function(req, res) {
     return res.json([
       {
-        "function": "help",
-        message: "No help right now."
+        text: "No help right now."
       }
     ]);
   };
@@ -59,8 +57,7 @@
   controller.list = function(req, res) {
     return res.json([
       {
-        "function": "list",
-        message: "TODO"
+        text: "TODO"
       }
     ]);
   };
@@ -68,8 +65,7 @@
   controller.search = function(req, res) {
     return res.json([
       {
-        "function": "search",
-        message: "This will involve ES, so leave for future.",
+        text: "This will involve ES, so leave for future.",
         body: req.body
       }
     ]);
