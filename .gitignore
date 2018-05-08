@@ -1,5 +1,6 @@
 # Configs
-config
+config/*
+!config/config-EXAMPLE.json
 newrelic.js
 
 # Data

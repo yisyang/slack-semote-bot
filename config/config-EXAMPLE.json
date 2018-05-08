@@ -1,0 +1,31 @@
+{
+  "development": {
+    "env": "development",
+    "appDir": "app",
+    "url": "localhost:8888",
+    "port": 8888,
+    "https": {
+      "enabled": false,
+      "key": "ssl/dev-key.pem",
+      "cert": "ssl/dev-cert.pem"
+    },
+    "tokens": [
+      "DEADBEEF"
+    ]
+  },
+  "production": {
+    "env": "production",
+    "appDir": "app",
+    "url": "semote-bot.example.com",
+    "port": 7777,
+    "https": {
+      "enabled": false,
+      "key": "ssl/prod-key.pem",
+      "cert": "ssl/prod-cert.pem"
+    },
+    "tokens": [
+      "ABBACADABABBA",
+      "ABCABC1234567"
+    ]
+  }
+}
